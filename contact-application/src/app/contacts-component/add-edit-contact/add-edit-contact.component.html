@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <h3>{{pageTitle}}</h3>
+  </div>
+  <form [formGroup]="contactForm" (ngSubmit)="onFormSubmit()">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="form-group">
+        <label for="firstNameId">First Name</label>
+        <input 
+          type="text" 
+          id="firstNameId" 
+          formControlName="firstName"
+          class="form-control">
+          <span 
+          class="help-block"
+          *ngIf="!contactForm.controls['firstName'].valid && contactForm.controls['firstName'].touched">
+          Please enter your First Name!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="lastNameId">Last Name</label>
+        <input 
+          type="text" 
+          id="lastNameId" 
+          formControlName="lastName"
+          class="form-control">
+          <span 
+          class="help-block"
+          *ngIf="!contactForm.controls['lastName'].valid && contactForm.controls['lastName'].touched">
+          Please enter your Last Name!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="emailId">Email Address</label>
+        <input 
+          type="email" 
+          id="emailId" 
+          formControlName="email"
+          class="form-control">
+          <span 
+          class="help-block"
+          *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched">
+          Please enter a valid email Address!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumberId">Phone Number</label>
+        <input 
+          type="tel" 
+          id="phoneNumberId" 
+          formControlName="phoneNumber"
+          class="form-control">
+          <span 
+          class="help-block"
+          *ngIf="!contactForm.controls['phoneNumber'].valid && contactForm.controls['phoneNumber'].touched">
+          Please enter your Phone Number!.
+          </span>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center">
+      <button 
+      class="btn btn-primary" 
+      type="submit"
+      [disabled]="!contactForm.valid"
+      >{{buttonText}}</button>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center">
+      <a class="cancel" routerLink="/list-of-contact">Cancel</a>
+    </div>
+  </form>
+</div>
