@@ -15,7 +15,9 @@ export class ContactComponent implements OnInit {
     private route: Router,
     ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.contactPerson = this.contactObj.getContactElement();
+  }
 
   editContact(){
     this.contactObj.setContactElement(this.contactPerson);

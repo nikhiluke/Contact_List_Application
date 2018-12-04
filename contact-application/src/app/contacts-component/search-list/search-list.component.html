@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-offset-2 col-lg-8 col-md-8 col-sm-12 col-xs-12">
-    <div class="list-card">
-      <div *ngIf="listOfContactArray else showMessage">
+    <div class="list-card" *ngIf="flowFlag">
         <a
           (click)="displayContact(i)"
           class="list-group-item clearfix"
@@ -21,13 +20,5 @@
           </div>
         </a>
       </div>
-      <div class="col-xs-12">
-          <ng-template #showMessage>
-            <blockquote>
-              No Contact found !!!
-            </blockquote>
-          </ng-template>
-        </div>
-    </div>
   </div>
 </div>

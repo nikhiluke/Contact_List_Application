@@ -8,8 +8,10 @@ import { AddEditContactComponent } from './contacts-component/add-edit-contact/a
 import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contacts-component/list-of-contacts/contact/contact.component';
 import { ListOfContactsService } from '../shared/List-Of-Contacts.service';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { EditContactResolverService } from "../shared/edit-contact-resolver.service";
+import { SendDataService } from "../shared/sendData.service";
+import { SearchListComponent } from './contacts-component/search-list/search-list.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +20,19 @@ import { EditContactResolverService } from "../shared/edit-contact-resolver.serv
     AddEditContactComponent,
     HeaderComponent,
     ContactComponent,
+    SearchListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     ListOfContactsService,
-    EditContactResolverService],
+    EditContactResolverService,
+    SendDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
