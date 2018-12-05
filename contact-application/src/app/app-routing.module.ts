@@ -5,6 +5,7 @@ import { AddEditContactComponent } from "./contacts-component/add-edit-contact/a
 import { EditContactResolverService } from "../shared/edit-contact-resolver.service";
 import { ContactComponent } from "./contacts-component/list-of-contacts/contact/contact.component";
 import { SearchListComponent } from "./contacts-component/search-list/search-list.component";
+import { AboutComponent } from "./about/about.component";
 
 
 const approutes: Routes  = [
@@ -32,6 +33,10 @@ const approutes: Routes  = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
 ]
 

@@ -11,7 +11,7 @@ import { SendDataService } from "../../../shared/sendData.service";
 export class SearchListComponent implements OnInit {
 
   listOfContactArray: ContactModel[]=[];
-  flowFlag=false; 
+  flowFlag=false;
 
   constructor(
     private contactObj: ListOfContactsService,
@@ -26,10 +26,12 @@ export class SearchListComponent implements OnInit {
         this.flowFlag = Boolean(params['flowFlag']);
       }
     )
-    this.listOfContactArray.push(this.contactObj.getContactElement());
+    if(this.flowFlag){
+      this.listOfContactArray.push(this.contactObj.getContactElement());
+    }
    }
   displayContact(i: number){
-    this.contactObj.setContactElement(this.listOfContactArray[i]); 
+    this.contactObj.setContactElement(this.listOfContactArray[i]);
     this.route.navigate(['contact']);
   }
 }

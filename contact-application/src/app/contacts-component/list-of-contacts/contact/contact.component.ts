@@ -27,5 +27,6 @@ export class ContactComponent implements OnInit {
   deleteContact(){
     this.contactObj.deleteContact(this.contactPerson.id);
     this.contactPerson = null;
+    this.route.navigate(['/list-of-contact']);
   }
 }

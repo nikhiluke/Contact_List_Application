@@ -9,7 +9,7 @@ import { SendDataService } from "../../shared/sendData.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  addIn = false;  
+  addIn = false;
   inputValue: string;
   constructor(
     private route: Router,
@@ -17,9 +17,9 @@ export class HeaderComponent implements OnInit {
     private contactObj: ListOfContactsService) { }
   ngOnInit() {
   }
-  toggleButton() { 
+  toggleButton() {
         let boolValue = this.addIn;
-        this.addIn = (boolValue === false ? true : false); 
+        this.addIn = (boolValue === false ? true : false);
     }
   searchContact(value: string){
     let flag = true;
@@ -27,7 +27,9 @@ export class HeaderComponent implements OnInit {
     this.inputValue = null;
     flag = this.contactObj.searchedContact(value);
     if(flag){
-      this.route.navigate(['/searched-list'], {queryParams:{flowFlag: 'true'}});
+      this.route.navigate(['/searched-list'], {queryParams:{flowFlag: 1}});
+    }else{
+      this.route.navigate(['/searched-list'], {queryParams:{flowFlag: ''}});
     }
-  }  
+  }
 }
